@@ -16,3 +16,14 @@ In order to run the project locally, you should create a conda environment using
 [Kirill Molchanov] (kyrill.molchanov@gmail.com)
 
 [Yulan Xie] (XXXXX@gmail.com)
+
+# ## Wallet (for tests)
+
+
+| A6knLjzeJzb3Te8hYvEykGbPUyDS1bmWu7SF4Uz1RNo7     |
+| ------------------------------------------------ |
+| 21bj7JKjdiPpLAirCuhhXm6mX7cQ7LQYNXnrUsCaFyia     |
+| 2duPt7SxFsNLzsuXc2PBYbbaPzKJy22jKLqBbWCaGvaE     |
+| 21bj7JKjdiPpLAirCuh1234cQ7LQYNXnrUsCaFyiaq204fvv |
+| A6knLjzeJzb3Te8hYvEykGbPUyDS1bmWu7SF4Uz1RNos     |
+| 21bj7JKjdi29cnw2hXm6mX7cQ7LQYNXnrUs2CaFyiavdvb   |
