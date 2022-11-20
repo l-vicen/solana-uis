@@ -20,7 +20,7 @@ def display_customer_dashboard():
     #score.append(1)
 
     dictionary = df.set_index('Wallets').T.to_dict('list')
-    st.write(dictionary)
+    # st.write(dictionary)
 
     score = 0
     for key, value in dictionary.items():

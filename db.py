@@ -15,6 +15,7 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 conn = connect(credentials=credentials)
 
+# Get Request to own built DB 
 def getDataSheetCS():
     sa = gspread.service_account("credentials.json")
     sh = sa.open("hackaTUM")
