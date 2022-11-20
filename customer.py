@@ -14,22 +14,31 @@ def display_customer_dashboard():
         c2.warning("Enter Wallet Address")
     else:
         c2.success("Credit Score Queried")
-        c2.markdown('The current movie title is ' + address)
+        c2.markdown('The current movie title is: ' + address)
 
     score = []
     #score.append(1)
 
-    df = df[df.Wallets == address]
+    dictionary = df.set_index('Wallets').T.to_dict('list')
+    st.write(dictionary)
+
+    score = 0
+    for key, value in dictionary.items():
+        if (address == key):
+            score += value[0] 
+            break
+
+    # df = df[df.Wallets == address]
     # c2.table(df)
-    score = df['Credit Scores']
+    # score = df['Credit Scores']
     # print("type", type(score))
-    if len(score) > 0:
+    if score > 0:
         # print("print1", score[0])
         #st.write(score)
 
         fig = go.Figure(go.Indicator(
             mode = "gauge+number",
-            value = score[0],
+            value = score,
             domain = {'x': [0, 1], 'y': [0, 1]},
             title = {'text': "Score"}))
 
