@@ -21,9 +21,11 @@ def display_merchant_dashboard():
 
     # Edge case testing would be to provide a transaction with no product reference.
     count = []
+    p = ""
     for t in range(len(product)):
         sum = 0
         s = product[t]
+        p += product[t] + ","
         for i in range(0, len(s)):
             if s[i] == " ":
                 sum += 1
@@ -33,7 +35,11 @@ def display_merchant_dashboard():
     timestamps = df["Timestamp"].tolist()
     timestamps = [datetime.utcfromtimestamp(t).strftime('%Y-%m-%d %H:%M:%S') for t in timestamps]
     # st.write(timestamps)
-    f = px.line(timestamps, count)
+    d = {'Time':timestamps,'Sales':count}   
+    frame = pd.DataFrame(d)
+    # st.write(df)
+
+    f = px.line(frame, x="Time", y="Sales")
     col1.subheader("Total Sales over Time")
     col1.plotly_chart(f)
 
@@ -42,3 +48,14 @@ def display_merchant_dashboard():
     fig = px.pie(values = count, names = types)
     col2.subheader("Solana-Pay Users")
     col2.plotly_chart(fig)
+
+    l = p.split(",")
+    favProducts = list(filter(None, l))
+    # st.write(favProducts)
+
+    st.markdown("### Favorite Products")
+    dFavProdcs = {'Favorite_Products': favProducts}
+    frameFavProdct = pd.DataFrame(dFavProdcs)
+
+    hist = px.histogram(frameFavProdct, x="Favorite_Products")
+    st.plotly_chart(hist)
