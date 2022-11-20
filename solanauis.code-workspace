@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": ".streamlit",
+			"path": "../agents_ui/.streamlit"
+		},
+		{
+			"name": "assets",
+			"path": "../agents_ui/assets"
+		},
+		{
+			"name": "smoody",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
