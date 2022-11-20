@@ -11,7 +11,7 @@ def display_customer_dashboard():
 
     address = c2.text_input('Your SOL wallet address')
     if address == "":
-        c2.warning("Enter Address")
+        c2.warning("Enter Wallet Address")
     else:
         c2.success("Credit Score Queried")
         c2.markdown('The current movie title is ' + address)
