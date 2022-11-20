@@ -30,6 +30,10 @@ def getDataSheetCS():
     pass
 
 def getDataSheetCS():
-    pass
+    gsheet_url = "https://docs.google.com/spreadsheets/d/1TscPz0hQe8PbnS3gfssrYM21K_n4N1RR4kxAnWHjodc/edit?usp=sharing"
+    conn = connect()
+    rows = conn.execute(f'SELECT * FROM "{gsheet_url}"')
+    df_gsheet = pd.DataFrame(rows)
+    return df_gsheet
 
     

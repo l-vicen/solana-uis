@@ -16,7 +16,7 @@ class Router:
     def display_router(self):
         # Sidebar attributes
         home.Sidebar.sidebar_functionality(self)
-        self.features = ['Home','Is the user creditworthy?', 'Your Credit Score', 'Merchant statistics']
+        self.features = ['Home','Customer', 'Merchant', 'Loaner']
         self.page = st.sidebar.selectbox('Choose the option', self.features)
         st.sidebar.markdown('---')
 
@@ -27,15 +27,15 @@ class Router:
         
         # Get your credit score
         elif self.page == self.features[1]:
-            customer.customer_setup()
+            customer.display_customer_dashboard()
 
         # Get your credit score
         elif self.page == self.features[2]:
-            customer.customer_setup()
+            merchant.display_merchant_dashboard()
 
         # Merchant statistics
         elif self.page == self.features[3]:
-            merchant.merchant_setup()
+            loaner.display_merchant_dashboard()
 
             
 # Initiating class
