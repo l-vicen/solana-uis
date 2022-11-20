@@ -7,9 +7,7 @@ import home
 # Page configurations in App
 st.set_page_config(  # Alternate names: setup_page, page, layout
 	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
-	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
-	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
-	page_icon=None,  # String, anything supported by st.image, or None.
+	initial_sidebar_state="auto"
 )
 
 class Router:
@@ -35,7 +33,7 @@ class Router:
 
         # Merchant statistics
         elif self.page == self.features[3]:
-            loaner.display_merchant_dashboard()
+            loaner.display_loaner_dashboard()
 
             
 # Initiating class

@@ -1,7 +1,36 @@
-import db as db
+import db
+import plotly.graph_objects as go
 import streamlit as st
 
 def display_customer_dashboard():
-    st.title('Customer Credit Score')
+
+    c1, c2, c3 = st.columns([1,1,1])
+    c2.markdown("## Customer Credit Score")
     df = db.getDataSheetCS()
-    st.table(df)
+    #st.table(df)
+
+    address = c2.text_input('Your SOL wallet address')
+    if address == "":
+        c2.warning("Enter Address")
+    else:
+        c2.success("Credit Score Queried")
+        c2.markdown('The current movie title is ' + address)
+
+    score = []
+    #score.append(1)
+
+    df = df[df.Wallets == address]
+    # c2.table(df)
+    score = df['Credit Scores']
+    # print("type", type(score))
+    if len(score) > 0:
+        # print("print1", score[0])
+        #st.write(score)
+
+        fig = go.Figure(go.Indicator(
+            mode = "gauge+number",
+            value = score[0],
+            domain = {'x': [0, 1], 'y': [0, 1]},
+            title = {'text': "Score"}))
+
+        c2.plotly_chart(fig)
