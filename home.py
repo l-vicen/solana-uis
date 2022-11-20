@@ -1,8 +1,9 @@
 # Dependencies
 import streamlit as st
-import pandas as pd
 
 def display_home():
+    """Home Page UI"""
+
     st.title('S-Moody')
     st.markdown("##### First credit rating project for Solana Ecosystem.")
     col1, col2 = st.columns([3,1])
@@ -25,7 +26,8 @@ def display_home():
     )
     st.markdown('---')
 
-class Sidebar: 
+class Sidebar:
+    """Side Bar Class Declaration""" 
 
     # Sidebar attribute Logo
     def sidebar_functionality(self):

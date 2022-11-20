@@ -14,7 +14,7 @@ def display_customer_dashboard():
         c2.warning("Enter Wallet Address")
     else:
         c2.success("Credit Score Queried")
-        c2.markdown('The current movie title is: ' + address)
+        c2.markdown('The current wallet address is: ' + address)
 
     # Matching Score to Wallet Address
     dictionary = df.set_index('Wallets').T.to_dict('list')
