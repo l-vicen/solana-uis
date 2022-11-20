@@ -4,7 +4,7 @@ import pandas as pd
 
 def display_home():
     st.title('S-Moody')
-    col1, col2 = st.columns([1,2])
+    col1, col2 = st.columns([1,1])
 
     col1.header('About')
     col1.info('Web3 first credit rating for the Solana Ecosystem. Building credit based on day-to-day transactions via Solana-Pay')

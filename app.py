@@ -1,7 +1,7 @@
 import streamlit as st
-import credit_check
-import credit_score
-import merchant_statistics
+import loaner
+import customer
+import merchant
 import home
 
 # Page configurations in App
@@ -27,15 +27,15 @@ class Router:
         
         # Get your credit score
         elif self.page == self.features[1]:
-            credit_score.credit_score_setup()
+            customer.customer_setup()
 
         # Get your credit score
         elif self.page == self.features[2]:
-            credit_score.credit_score_setup()
+            customer.customer_setup()
 
         # Merchant statistics
         elif self.page == self.features[3]:
-            merchant_statistics.merchant_statistics_setup()
+            merchant.merchant_setup()
 
             
 # Initiating class
@@ -46,5 +46,5 @@ route = Router()
 route.display_router()
 route.route()
 
-#credit_check.sidebar.sidebar_inform_libs()
-credit_check.sidebar.sidebar_contact()
+#loaner.sidebar.sidebar_inform_libs()
+home.sidebar.sidebar_contact()
