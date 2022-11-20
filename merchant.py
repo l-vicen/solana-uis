@@ -5,8 +5,10 @@ import plotly.express as px
 from datetime import datetime
 
 def display_merchant_dashboard():
+    """ Merchant UI """
+
     st.title('Merchant Analytics')
-    df = db.getDataSheetMA()
+    df = db.getDataSheetMA() # Querying the data
     st.write('---')
     st.write('## Dashboard')
     st.table(df)
@@ -39,6 +41,7 @@ def display_merchant_dashboard():
     frame = pd.DataFrame(d)
     # st.write(df)
 
+    """ All Plots for this Page """
     f = px.line(frame, x="Time", y="Sales")
     col1.subheader("Total Sales over Time")
     col1.plotly_chart(f)
