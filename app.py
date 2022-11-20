@@ -10,8 +10,11 @@ st.set_page_config(  # Alternate names: setup_page, page, layout
 	initial_sidebar_state="auto"
 )
 
+# Router to control paging
 class Router:
+
     def display_router(self):
+        """ Sidebar Navbar """
         # Sidebar attributes
         home.Sidebar.sidebar_functionality(self)
         self.features = ['Home','Customer', 'Merchant', 'Loaner']
@@ -19,6 +22,7 @@ class Router:
         st.sidebar.markdown('---')
 
     def route(self):
+        """ Router Functionality """
          # Credit worthness test
         if self.page == self.features[0]:
             home.display_home()
